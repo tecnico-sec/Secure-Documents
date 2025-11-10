@@ -255,11 +255,14 @@ You should wrap the previously seen operations in a cryptographic library, and y
 - `check`, which should be performed by the reader to verify the integrity and status of the document (e.g. has it been tampered with? is it fresh?).
 - `unprotect`, which should have the ability to revert a document from its protected state to its original state (e.g. decrypting).
 
+You should define a main class that serves as an entry point to allow users to execute the library’s functionalities.
 Having created this library, you should make use of it to create a command-line interface (CLI) which can neatly perform these operations on any given document.
 It is recommended that you follow the `protect`, `unprotect` and `check` naming convention, as it will be easier to test your solution.  
 For the CLI, use the [*appassembler* plug-in](https://www.mojohaus.org/appassembler/appassembler-maven-plugin/) to generate a script to run the program in the command line.
 It is compatible with both Linux and Windows.
-The command to compile everything and generate the scripts is `mvn install`, as configured in the `pom.xml` file.
+The command to compile everything and generate the scripts is `mvn install`, as configured in the `pom.xml` file. 
+Open the `pom.xml` file and look for the definition of the `mainclass` (you can do control+F on the word mainclass) and change it to the main class that you created.
+Test your tool with the `document.json` file.
 
 ## 6. Conclusion
 
