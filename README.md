@@ -202,7 +202,7 @@ In this step you should add freshness tokens to the document to prevent *replay 
 There are several alternatives for the freshness token.
 Select the one you consider the most suitable for this case and take note of their advantages and disadvantages.
 
-The writer should add a freshness token to the document, and the reader must verify the token the document.
+The writer should add a freshness token to the document, and the reader must verify the token of the document.
 If the given document is not fresh, the reader should alert the user and the document should **not** be used.
 
 ## 3. Attacks
