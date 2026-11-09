@@ -6,7 +6,7 @@ Instituto Superior Técnico, Universidade de Lisboa
 
 ## Introduction
 
-This laboratory assignment uses the JSON data format for data representation and the Java cryptographic functions to implement secure docs that provide different services, including confidentiality and integrity.
+This laboratory guide uses the JSON data format for data representation and the Java cryptographic functions to implement secure documents that provide protections such as confidentiality and integrity.
 
 The goals are:
 
@@ -246,28 +246,36 @@ Can the produced solution prevent the repudation of documents?
 i.e. can the writer deny having produced a document? 
 Justify your answer, and suggest possible improvements, if necessary.
 
-## 5. Project adaptation
+## 5. Library
 
 Now, you should put into practice the various cryptographic primitives learned so far.
-You should wrap the previously seen operations in a cryptographic library, and your solution should support the following operations:
+You should wrap the previously seen operations in a cryptographic library, that can be reusable.
+
+The solution should support the following operations:
 
 - `protect`, which refers to all the cryptographic operations that the writer should perform, and should essentially secure a given document (e.g. encrypting, ensuring integrity and freshness).
 - `check`, which should be performed by the reader to verify the integrity and status of the document (e.g. has it been tampered with? is it fresh?).
 - `unprotect`, which should have the ability to revert a document from its protected state to its original state (e.g. decrypting).
 
 You should define a main class that serves as an entry point to allow users to execute the library’s functionalities.
-Having created this library, you should make use of it to create a command-line interface (CLI) which can neatly perform these operations on any given document.
+
+The command to compile everything and generate the scripts is `mvn install`, as configured in the `pom.xml` file. 
+
+## 6. Command line interface
+
+Having created the library, you should make use of it to create a command-line interface (CLI) which can neatly perform these operations on any given document.
 It is recommended that you follow the `protect`, `unprotect` and `check` naming convention, as it will be easier to test your solution.  
+
 For the CLI, use the [*appassembler* plug-in](https://www.mojohaus.org/appassembler/appassembler-maven-plugin/) to generate a script to run the program in the command line.
 It is compatible with both Linux and Windows.
-The command to compile everything and generate the scripts is `mvn install`, as configured in the `pom.xml` file. 
+
 Open the `pom.xml` file and look for the definition of the `mainclass` (you can do control+F on the word mainclass) and change it to the main class that you created.
 Test your tool with the `document.json` file.
 
-## 6. Conclusion
+## 7. Conclusion
 
 In this laboratory guide we used documents in JSON format, protected with cryptographic functions, to obtain custom secure documents.
-A good understanding of the building blocks is important to effectively adapt real-world payloads which may have to be sent across insecure channels.
+A good understanding of the building blocks is important to effectively create secure documents that can remain secure even when transported across insecure communication channels.
 
 ----
 
